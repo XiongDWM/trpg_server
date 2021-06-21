@@ -10,12 +10,15 @@ spring:
     datasource:
         driver-class-name: org.h2.Driver
         password: adminsa
-        url: jdbc:h2:D:/H2/trpgdb
+        url: jdbc:h2:D:/H2/coc
         username: sa
     h2:
         console:
             enabled: true
-            path: /trpg-h2-console
+            path: /h2-console
+            settings:
+              trace: false
+              web-allow-others: true
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
         serialization:
