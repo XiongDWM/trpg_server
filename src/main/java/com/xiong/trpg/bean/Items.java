@@ -1,20 +1,25 @@
 package com.xiong.trpg.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="props")
+@Table(name="items")
 public class Items implements Serializable {
     private static final long serialVersionUID=1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Long id;
+    @Column(name="name")
     private String name;
+    @Column(name="price")
     private Long price;
+    @Column(name="in_decade")
     private String inDecade;
+    @Column(name="type")
     private ItemType type;
+    @Column(name="damage")
     private String damage;
 
     public enum ItemType{

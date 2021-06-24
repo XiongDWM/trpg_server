@@ -1,7 +1,6 @@
 package com.xiong.trpg.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -9,11 +8,17 @@ import java.io.Serializable;
 public class Character implements Serializable {
 
     private static final long serialVersionUID=1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name="game_uuid")
     private String gameUUID;
+    @Column(name="name")
     private String name;
+    @Column(name="sex")
     private String sex;
+    @Column(name="final_status")
     private FinalStatusForCharacter finalStatusForCharacter;
 
     public enum FinalStatusForCharacter{

@@ -1,10 +1,9 @@
 package com.xiong.trpg.bean;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="game")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
