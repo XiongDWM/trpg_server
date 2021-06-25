@@ -18,8 +18,11 @@ public class Character implements Serializable {
     private String name;
     @Column(name="sex")
     private String sex;
+    @Column(name="age")
+    private Integer age;
     @Column(name="final_status")
     private FinalStatusForCharacter finalStatusForCharacter;
+
 
     public enum FinalStatusForCharacter{
         DEAD("死亡"),
@@ -78,5 +81,13 @@ public class Character implements Serializable {
 
     public void setFinalStatusForCharacter(FinalStatusForCharacter finalStatusForCharacter) {
         this.finalStatusForCharacter = finalStatusForCharacter;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

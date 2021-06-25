@@ -1,3 +1,5 @@
+package bean
+
 import com.xiong.trpg.bean.Game
 import javax.persistence.*
 
