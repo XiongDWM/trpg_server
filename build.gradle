@@ -77,9 +77,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
 	runtimeOnly 'com.h2database:h2'
-	implementation 'org.flywaydb:flyway-core'
 	implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 

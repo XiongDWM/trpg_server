@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Items implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
     @Column(name="name")
@@ -17,6 +17,7 @@ public class Items implements Serializable {
     private Long price;
     @Column(name="in_decade")
     private String inDecade;
+    @Enumerated(EnumType.STRING)
     @Column(name="type")
     private ItemType type;
     @Column(name="damage")

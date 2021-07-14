@@ -1,4 +1,4 @@
-package bean
+package com.xiong.trpg.bean
 
 import com.xiong.trpg.bean.Game
 import javax.persistence.*
@@ -6,11 +6,13 @@ import javax.persistence.*
 /**
  * kp类
  */
+@Entity
+@Table(name="keeper")
 data class Keeper(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    val id: Long,
+    val id: Long?=0,
 
     @Column(name = "name")
     val name: String,
@@ -18,9 +20,9 @@ data class Keeper(
     @Column(name = "password")
     val password: String,
 
-    @OneToMany(cascade = [(CascadeType.REFRESH)], fetch = FetchType.EAGER, targetEntity = Game::class)
+/*    @OneToMany(cascade = [(CascadeType.REFRESH)], fetch = FetchType.EAGER, targetEntity = Game::class)
     @JoinTable(
 
     )
-    val game: HashSet<Game>?=null
+    val game: HashSet<Game>?=null*/
 )
