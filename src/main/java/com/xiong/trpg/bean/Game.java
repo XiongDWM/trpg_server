@@ -1,6 +1,7 @@
 package com.xiong.trpg.bean;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="game")
@@ -21,6 +22,16 @@ public class Game {
 
     @Column(name="in_decade")
     private Integer inDecade; //所属年代
+
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name="keeper",referencedColumnName = "id")
+    private Person keeper;
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinTable(name="who_play",
+            joinColumns = {@JoinColumn(name = "gameUUid",referencedColumnName = "game_uuid")},
+            inverseJoinColumns ={@JoinColumn(name="id",referencedColumnName = "id")} )
+    private Set<Person> players;
 
     public Long getId() {
         return id;
@@ -60,5 +71,25 @@ public class Game {
 
     public void setInDecade(Integer inDecade) {
         this.inDecade = inDecade;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public Person getKeeper() {
+        return keeper;
+    }
+
+    public void setKeeper(Person keeper) {
+        this.keeper = keeper;
+    }
+
+    public Set<Person> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Person> players) {
+        this.players = players;
     }
 }
