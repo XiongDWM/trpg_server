@@ -18,7 +18,7 @@ public class Game {
     private String gameUUID;
 
     @Column(name = "file_uuid")
-    private String file_uuid;
+    private String fileUUID;
 
     @Column(name="in_decade")
     private Integer inDecade; //所属年代
@@ -57,12 +57,12 @@ public class Game {
         this.gameUUID = gameUUID;
     }
 
-    public String getFile_uuid() {
-        return file_uuid;
+    public String getFileUUID() {
+        return fileUUID;
     }
 
-    public void setFile_uuid(String file_uuid) {
-        this.file_uuid = file_uuid;
+    public void setFileUUID(String file_uuid) {
+        this.fileUUID = file_uuid;
     }
 
     public Integer getInDecade() {
